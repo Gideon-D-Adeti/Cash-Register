@@ -36,7 +36,7 @@ const checkCashRegister = () => {
 
     if (Number(cash.value) === price) {
         displayChangeDue.innerHTML =
-        '<p>No change due - customer paid with exact cash</p>';
+        '<h3>No change due - customer paid with exact cash</h3>';
         cash.value = '';
         return;
     }
@@ -53,7 +53,7 @@ const checkCashRegister = () => {
     );
 
     if (totalCID < changeDue) {
-        return (displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
+        return (displayChangeDue.innerHTML = '<h3>Status: INSUFFICIENT_FUNDS</h3>');
     }
 
     if (totalCID === changeDue) {
@@ -73,7 +73,7 @@ const checkCashRegister = () => {
         }
     }
     if (changeDue > 0) {
-        return (displayChangeDue.innerHTML = '<p>Status: INSUFFICIENT_FUNDS</p>');
+        return (displayChangeDue.innerHTML = '<h3>Status: INSUFFICIENT_FUNDS</h3>');
     }
 
     displayResults(result.status, result.change);
